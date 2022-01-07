@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>View Notice</title>
+    </head>
+    <center>
+        <body style="background-color: cornflowerblue;">
+            <div class="card-notice">
+                <h2 class="notice-title">{{notice.title}}</h2>
+                <div class="notice-content">
+                    <p>{{notice.issue_date}}</p><br>
+                    <p>{{notice.body}}</p>
+                </div>
+
+            </div>       
+        </body>
+    </center>
+    <a href="{%url 'empdash'%}" style="font-size: 20px; font-weight: bold; text-decoration: double; cursor: pointer;background-color: #021581; border: blue; color:white; padding: 10px 22px; text-align: center; border-radius: 12px; position: absolute; top: 10px; right: 20px;">Back to Employee's dasboard</a><br>
+</html>

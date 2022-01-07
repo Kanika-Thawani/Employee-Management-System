@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Employee</title>
+        {%load static%}
+            <link href="{%static '/style6.css' %}" rel = "stylesheet">
+        <style>
+            div{
+                margin-bottom: 1px;
+            }
+            label{
+                display: inline-block;
+                width: 150px;
+                text-align: justify;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            
+            <h1>Add Employee</h1>
+            <form method="POST">
+                {%csrf_token%}
+                <div>
+                    <label for="id">ID:</label>
+                    <input type="number" name="id" id="id" value="{{employee.id}}" readonly> 
+                </div><br>
+                <div>
+                    <label for="fname">First Name:</label>
+                    <input type="text" name="fame" id="fname" value="{{employee.fname}}">
+                </div><br>
+                <div>
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="lname" id="lname" value="{{employee.lname}}">
+                </div><br>
+                <div>
+                    <label for="dob">Date Of Birth:</label>
+                    <input type="date" name="dob" id="dob" value="{{employee.dob}}">
+                </div><br>
+                <div>
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" id="age" value="{{employee.age}}">
+                </div><br>
+                <div>
+                    <label for="city">City:</label>
+                    <input type="text" name="city" id="city" value="{{employee.city}}">
+                </div><br>
+                <div>
+                    <label for="email">Email ID:</label>
+                    <input type="text" name="email" id="email" value="{{employee.email}}">
+                </div><br>
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" value="{{username}}" readonly>
+                </div><br>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="text" name="password" id="password" value="{{password}}" readonly>
+                </div><br>
+                <div>
+                    <label for="joining_date">Joining Date:</label>
+                    <input type="date" name="joining_date" id="joining_date">
+                </div><br>
+                <div>
+                    <label for="rem_leaves">Remaining Leaves:</label>
+                    <input type="number" name="rem_leaves" id="rem_leaves" value="30"> 
+                </div><br>
+                <div>
+                    <label for="position">Position:</label>
+                    <input type="text" name="position" id="position" value="Beginner">
+                </div><br>
+                <div>
+                    <label for="department">Department:</label>
+                    <input type="text" name="department" id="department" value="Technical">
+                </div><br>
+                <div>
+                    <label for="current_project">Current Project:</label>
+                    <input type="text" name="current_project" id="current_project" value="Not Assigned">
+                </div><br>
+                
+                <input type="submit"  value="Add Employee">
+                    <a href="/addEmployees/{{val.id}}"></a>
+                </input>
+                <hr>
+                <a href="{%url 'viewEmployees'%}">View Employee records</a><br><br>
+                <a href="{% url 'viewApplicants' %}">View Applicants</a>
+                
+            </form>
+        </center>
+        <a href="{%url 'viewApplicants'%}" style="font-size: 20px; font-weight: bold; text-decoration: double; cursor: pointer;background-color: #021581; border: blue; color:white; padding: 10px 22px; text-align: center; border-radius: 12px; position: absolute; top: 10px; right: 20px;">Back to applicants</a><br>
+    </body>
+</html>

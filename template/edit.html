@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <title>Edit details</title>
+</head>
+<body>
+    <center>
+        <form method="POST" action="/update/{{employee.id}}">
+            {%csrf_token%}
+        <table>
+            <tr>
+                <td>Employee fname</td>
+                <td> <input type="text" name="fname" value="{{employee.fname}}"></td>
+            </tr>
+            <tr>
+                <td>Employee lname</td>
+                <td> <input type="text" name="lname" value="{{employee.lname}}"></td>
+            </tr>
+            <tr>
+                <td>Employee dob</td>
+                <td> <input type="date" name="dob" value="{{employee.dob}}"></td>
+            </tr>
+            <tr>
+                <td>Employee age</td>
+                <td> <input type="number" name="age" value="{{employee.age}}"></td>
+            </tr>
+            <tr>
+                <td>Employee city</td>
+                <td> <input type="text" name="city" value="{{employee.city}}"></td>
+            </tr>
+            <tr>
+                <td>Employee email</td>
+                <td> <input type="text" name="email" value="{{employee.email}}"></td>
+            </tr>
+            <tr>
+                <td>Employee username</td>
+                <td> <input type="text" name="username" value="{{employee.username}}"></td>
+            </tr>
+            <tr>
+                <td>Employee password</td>
+                <td> <input type="password" name="password" value="{{employee.password}}"></td>
+            </tr>
+            <tr>
+                <td>Employee joining date</td>
+                <td> <input type="date" name="joining_date" value="{{employee.joining_date}}"></td>
+            </tr>
+            <tr>
+                <td>Employee remaining leaves</td>
+                <td> <input type="number" name="rem_leaves" value="{{employee.rem_leaves}}"></td>
+            </tr>
+            <tr>
+                <td>Employee department</td>
+                <td> <input type="text" name="department" value="{{employee.department}}"></td>
+            </tr>
+            <tr>
+                <td>Employee current project</td>
+                <td> <input type="text" name="current_project" value="{{employee.current_project}}"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Update record">
+        <hr>
+        <a href="{%url 'index'%}">View Employee record</a>
+            {%if messages %}
+                {% for result in messages %}
+                    <b style="color: darksalmon;">{{result}}</b>
+                {%endfor%}
+            {%endif%}
+    </form>    
+    </center>
+    <a href="{%url 'viewEmployees'%}" style="font-size: 20px; font-weight: bold; text-decoration: double; cursor: pointer;background-color: #021581; border: blue; color:white; padding: 10px 22px; text-align: center; border-radius: 12px; position: absolute; top: 10px; right: 20px;">Back to Employees</a><br>
+</body>
+</html>

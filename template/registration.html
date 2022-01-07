@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+ <html lang="en"> 
+   <head>  
+        <meta charset="UTF-8">  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Registration</title>  
+        {%load static%}
+        <link href="{%static '/style3.css' %}" rel = "stylesheet"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+   </head>
+   <body> 
+        <div>   
+             <form method = "POST">
+                {%csrf_token%}    
+                <h4 class="text-warning text-center pt-5">REGISTRATION</h4>  
+                <label>     
+                    <input type="text" class="input" name="fname" placeholder="ENTER FIRST NAME"/><div class="line-box">
+                        <div class="line"></div>
+                    </div>    
+                </label>
+                <label>     
+                    <input type="text" class="input" name="lname" placeholder="ENTER LAST NAME"/><div class="line-box">
+                        <div class="line"></div>
+                    </div>    
+                </label>          
+                <label>     
+                    <input type="date" class="input" name="dob" placeholder="ENTER DATE OF BIRTH"/><div class="line-box">         
+                        <div class="line"></div>
+                    </div>                  
+                </label>
+                <label>     
+                    <input type="number" class="input" name="age" placeholder="ENTER AGE"/><div class="line-box">
+                        <div class="line"></div>
+                    </div>    
+                </label>
+                <label>     
+                    <input type="text" class="input" name="city" placeholder="ENTER CITY"/><div class="line-box">
+                        <div class="line"></div>
+                    </div>    
+                </label>
+                <label>     
+                    <input type="text" class="input" name="email" placeholder="ENTER EMAIL"/><div class="line-box">
+                        <div class="line"></div>
+                    </div>    
+                </label> 
+                <input type="submit" value="REGISTER">
+                    <hr>
+                    <a href="{%url 'insert'%}"></a>
+                    {%if messages %}
+                        {% for result in messages %}
+                            <b style="color:rgb(0, 153, 255);">{{result}}</b>
+                        {%endfor%}
+                    {%endif%}
+                </input>
+                <a href="{%url 'index'%}">Back To Home Page</a>
+             </form>
+        </div> 
+        <a href="{%url 'login'%}" style="font-size: 20px; font-weight: bold; text-decoration: double; cursor: pointer;background-color: #4c5baf; border: blue; color:white; padding: 10px 22px; text-align: center; border-radius: 12px; position: absolute; top: 10px; right: 10px;">LOGIN</a><br><br>
+        
+    </body> 
+</html>

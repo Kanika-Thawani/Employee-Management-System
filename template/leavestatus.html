@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Leaves' status</title>
+    </head>
+    <body>
+        {%load static%}
+        <link href="{%static '/style4.css' %}" rel = "stylesheet">
+        <h2>Leaves' status for {{employee.fname}} {{employee.lname}}</h2>
+        <p><b>Leaves Taken: </b>{{leavesTaken}}</p>
+        <p><b>Remaining Leaves: </b>{{employee.rem_leaves}}</p>
+        <table border="2">
+            <tr>
+                <th>Leave Type</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Status</th>
+            </tr>
+            {%for leave in leaves %}
+                <tr>
+                    <td>{{leave.leaveType}}</td>
+                    <td>{{leave.startDate}}</td>
+                    <td>{{leave.endDate}}</td>
+                    <td style="color: rgb(36, 22, 83); font-weight: bold;">{{leave.decision}}</td>
+                </tr>
+            {%endfor%}
+
+        </table>
+        <a href="{%url 'empdash'%}" style="font-size: 20px; font-weight: bold; text-decoration: double; cursor: pointer;background-color: #021581; border: blue; color:white; padding: 10px 22px; text-align: center; border-radius: 12px; position: absolute; top: 10px; right: 20px;">Back to Employee's dasboard</a><br>
+            
+    </body>
+</html>

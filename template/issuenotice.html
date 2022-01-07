@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Issue Notice</title>
+        <style>
+            div{
+                margin-bottom: 1px;
+            }
+            label{
+                display: inline-block;
+                width: 150px;
+                text-align: justify;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            body{
+                background-color: rgb(8, 94, 109);
+            }
+        </style>
+    </head>
+    <center>
+        <body>
+            <form method="POST" style="background-color: rgb(149, 210, 212);width: 35%; height: fit-content; padding-bottom: 20px; padding-right: 30px; border: 2px solid black; margin-top: 150px;padding-left: 30px; text-align: center;">
+                {%csrf_token%}
+                <h1>Create Notice</h1>
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" style="width: 60%;">
+                </div><br> 
+                <div>
+                    <label for="body" style="vertical-align: top;">Body:</label>
+                    <textarea name="body" placeholder="Write notice here....." rows="10" columns="30" style="width: 60%;"></textarea>
+                </div><br>
+                    <input type="submit" value="Issue" style="border: 1.5px solid black; border-radius: 5px; position:relative; font-size: 18px; font-weight: bold;">
+            </form>
+            <a href="{%url 'admdash'%}" style="font-size: 20px; font-weight: bold; text-decoration: double; cursor: pointer;background-color: #021581; border: blue; color:white; padding: 10px 22px; text-align: center; border-radius: 12px; position: absolute; top: 10px; right: 20px;">Back to admin dasboard</a><br>
+        </body>
+    </center>
+</html>

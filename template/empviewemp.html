@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <title>View Employees</title>
+    <body>
+        {%load static%}
+        <link href="{%static '/style4.css' %}" rel = "stylesheet">
+        <a href="/addEmployees/{{val.id}}"></a><br><br><hr>
+        <table border = "2" style="position: absolute; top: 80px;">
+            <tr>
+                <th>Id</th>
+                <th>Fame</th>
+                <th>Lame</th>
+                <th>DOB</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Email</th>
+                <th>Joining Date</th>
+                <th>Remaining Leaves</th>
+                <th>Position</th>
+                <th>Department</th>
+                <th>Current project</th>
+            </tr>
+            {%for val in employees%}
+            <tr>
+                <td>{{val.id}}</td>
+                <td>{{val.fname}}</td>
+                <td>{{val.lname}}</td>
+                <td>{{val.dob}}</td>
+                <td>{{val.age}}</td>
+                <td>{{val.city}}</td>
+                <td>{{val.email}}</td>
+                <td>{{val.joining_date}}</td>
+                <td>{{val.rem_leaves}}</td>
+                <td>{{val.position}}</td>
+                <td>{{val.department}}</td>
+                <td>{{val.current_project}}</td>
+                
+            </tr>
+            {%endfor%}
+        </table>
+        <a href="{%url 'empdash'%}" style="font-size: 20px; font-weight: bold; text-decoration: double; cursor: pointer;background-color: #021581; border: blue; color:white; padding: 10px 22px; text-align: center; border-radius: 12px; position: absolute; top: 10px; right: 20px;">Back to Employee's dasboard</a><br>
+    </body>
+    
+</html>

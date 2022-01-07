@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Request for Leave</title>
+        <style>
+            div{
+                margin-bottom: 1px;
+            }
+            label{
+                display: inline-block;
+                width: 150px;
+                text-align: justify;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            body{
+                background-color: rgb(127, 182, 255);
+            }
+        </style>
+    </head>
+    <center>
+        <body>
+            <h1 style="position: absolute; top: 40px;left: 550px;">Request for Leave</h1>
+            <form method="POST" style="background-color: rgb(37, 107, 212); width: 40%;border: black solid;text-align: center; margin-top: 130px; padding-top: 30px; padding-bottom: 20px;">
+                <div>
+                    <label>Select leave type:</label>
+                    <select>
+                        <option value="Casual Leave">Casual Leave</option>
+                        <option value="Sick/Medical Leave">Sick Leave</option>
+                        <option value="Earned/Privilege Leave">Earned/Privilege Leave</option>
+                        <option value="Maternity/Paternity Leave">Maternity/Paternity Leave</option>
+                        <option value="Bereavement">Bereavement</option>
+                        <option value="Sabbatical">Sabbatical</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="start_date">Start Date:</label>
+                    <input type="date" name="start_date">
+                </div>
+                <br>
+                <div>
+                    <label for="end_date">End Date:</label>
+                    <input type="date" name="end_date">
+                </div>
+                <br>
+                <div>
+                    <label for="description" style="vertical-align: top;">Description:</label>
+                    <textarea placeholder="Write leave description here...." rows="8" columns="25" style="position: relative;"></textarea>
+                </div>
+                <br>
+                <input type="submit" name="Request" value="Request" style="border: 2px solid black; border-radius: 5px; position:relative; font-size: 18px; font-weight: bold;">
+            </form>
+        </body>
+    </center>
+    <a href="{%url 'empdash'%}" style="font-size: 20px; font-weight: bold; text-decoration: double; cursor: pointer;background-color: #021581; border: blue; color:white; padding: 10px 22px; text-align: center; border-radius: 12px; position: absolute; top: 10px; right: 20px;">Back to Employee's dasboard</a><br>
+</html>

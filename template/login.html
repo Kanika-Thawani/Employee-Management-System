@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Login Page</title>
+        
+    </head>
+    <body style= "background-color: aquamarine;">
+        <div>
+            <form name = "Login" method = "POST" style="display: block;border: 2px solid black; background: #968deb; text-align: center;  margin-top: 130px; margin-left: 400px; width: 20%; height: 45%; padding: 30px 120px 120px 120px; -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1); 
+            box-shadow: 2px 2px 3px rgba(0,0,0,0.1);">
+                {%csrf_token%}
+                <label for ="username" style="display: block; position: relative; margin: 40px 0px; padding: 10px; font-family: sans-serif; font-size: 20px; letter-spacing: 1px; width: auto; text-align: left;">Username</label>
+                <input type="text" id = "username" name="username" style=" position: relative; top: 1px; left: 1px; width: 100%; padding: 10px; border: 2px black; outline: none;">
+                <label for = "password" style="display: block; position: relative; margin: 40px 0px; padding: 10px; font-family: sans-serif; font-size: 20px; letter-spacing: 1px; width: auto; text-align: left;">Password</label>
+                <input type="password" id = "password" name="password" style="width: 100%; padding: 10px; border: 2px black; outline: none;">
+                <a href="{%url 'login'%}" style="font-size: 20px; font-weight: bold; text-decoration: double; cursor: pointer; background-color: white; border: black; color: black; padding: 10px 22px; text-align: center; border-radius: 12px; position:absolute; bottom: 100px; right:640px;">Login</a>
+            </form>
+            
+        </div>
+        <a href="{%url 'insert'%}" style="font-size: 20px; font-weight: bold; text-decoration: double; cursor: pointer;background-color: #4c5baf; border: blue; color:white; padding: 10px 22px; text-align: center; border-radius: 12px; position: absolute; top: 10px; right: 20px;">REGISTER</a><br><br>
+    </body>
+
+    
+</html>
